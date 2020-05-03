@@ -1,29 +1,22 @@
-## Welcome to GitHub Pages
+# Mesh Morpher
+Use this repository to turn one mesh into another with the power of [NVIDIA-Kaolin](https://github.com/NVIDIAGameWorks/kaolin) and [Pytorch](pytorch.org).
 
-You can use the [editor on GitHub](https://github.com/vaibhavnayel/meshmorpher/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Method
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We calculate the chamfer distance between 2 sampled meshes and backpropagate through it to morph a template mesh into the target. Edge length regularization is used to improve smoothness.
 
 ```markdown
-Syntax highlighted code block
+optimizer = torch.optim.Adam([m1.vertices],lr=0.01)
 
-# Header 1
-## Header 2
-### Header 3
+for i in range(epochs):
 
-- Bulleted
-- List
+    optimizer.zero_grad()
+    loss=chamfer_distance(m1,m2) + edge_length(m1)
+    loss.backward()
+    optimizer.step()
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
