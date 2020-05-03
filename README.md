@@ -18,3 +18,6 @@ for i in range(epochs):
     optimizer.step()
 
 ```
+## Usage
+1. download dependencies: `kaolin`, `pytorch`, `tqdm`, `numpy`, `plotly`
+2. Open the jupyter notebook  `tutorial.ipynb` and run all cells. Change path in the `get_model` function to load your own mesh.
