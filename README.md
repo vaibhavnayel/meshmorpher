@@ -1,7 +1,7 @@
 # Mesh Morpher
 Use this repository to turn one mesh into another with the power of [NVIDIA-Kaolin](https://github.com/NVIDIAGameWorks/kaolin) and [Pytorch](pytorch.org).
 
-![sample car obj](https://github.com/vaibhavnayel/meshmorpher/blob/master/image.png)
+![sample car obj](https://raw.githubusercontent.com/vaibhavnayel/meshmorpher/master/image.png)
 
 ## Method
 
